@@ -14,6 +14,7 @@ public class Main {
 
         System.out.println("Digite um CEP: ");
         var leitura = scanner.nextLine();
+        //teste
 
 
         var endereco = "https://viacep.com.br/ws/"+ leitura + "/json/";
