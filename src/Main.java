@@ -14,22 +14,9 @@ public class Main {
 
         System.out.println("Digite um CEP: ");
         var leitura = scanner.nextLine();
-        //teste
 
-
-        var endereco = "https://viacep.com.br/ws/"+ leitura + "/json/";
-
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(endereco))
-                .build();
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        //usando o .send o programa espera a resposta antes de continuar, pode quebrar entao eh obrigatorio o uso do throws
-
-        ViaCepClient endereco = new ViaCepClient(leitura);
-        String json = response.body();
-        System.out.println(json);
-
+        ViaCepClient ex1 = new ViaCepClient();
+        System.out.println(ex1.buscar(leitura));
 
     }
 }
